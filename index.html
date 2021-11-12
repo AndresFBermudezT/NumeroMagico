@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>NÚMERO MÁGICO  </title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" src="js/logica.js"></script>
+
+  </head>
+  <body onload="mueveReloj()">       
+    <div id="contenedor">
+    <div id="juego">
+      <script src="js/logica.js"></script>
+      <header><h1>BIENVENIDO AL JUEGO DEL NÚMERO MÁGICO</h1></header> 
+      <article>
+        <section>
+            <p id="reglas"></p>
+              <script>
+                document.getElementById("reglas").innerHTML = "Hay un número mágico entre el " + getMin() + " y " + getMax() + ". Necesitaras adivinar cual es. Tienes " + getTiempoSeg() + " seg para hacerlo.<p></p>Tendras algunas pistas que serviran para facilitarte la busqueda. BUENA SUERTE.";  
+                  function mueveReloj(){
+                    momentoActual = new Date()
+                    hora = momentoActual.getHours()
+                    minuto = momentoActual.getMinutes()
+                    segundo = momentoActual.getSeconds()
+                    horaImprimible = hora + " : " + minuto + " : " + segundo
+                    document.form_reloj.reloj.value = horaImprimible
+                    setTimeout("mueveReloj()",1000)
+                  }
+                              
+              </script>
+              <div id="consola"> 
+               <button class="numero" onclick="jugar()"> COMENZAR</button>        
+              <input class="numero" id="numero" type="number" name="nombredelacaja">
+              <button class="numero"onclick="enviarNumero()"> Enviar </button>
+              <form  name="form_reloj">
+                <input id="rej" type="text" name="reloj" size="6">
+              </form>
+            </div>
+              <p id="listo"></p>
+   
+        </section>
+        <div id="indicador"></div>
+
+
+
+
+
+      </article>
+
+          
+      </div>
+      </div>
+  </body>
+</html>
